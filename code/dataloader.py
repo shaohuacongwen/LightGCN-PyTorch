@@ -285,7 +285,7 @@ class Loader(BasicDataset):
         self.items_D = np.array(self.UserItemNet.sum(axis=0)).squeeze()
         self.items_D[self.items_D == 0.] = 1.
         # pre-calculate
-        self._allPos = self.getUserPosItems(list(range(self.n_user)))
+        self._allPos = self.getUserPosItems(list(range(self.n_user))) #列表，train
         self.__testDict = self.__build_test()
         print(f"{world.dataset} is ready to go")
 
